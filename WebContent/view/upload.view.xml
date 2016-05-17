@@ -1,0 +1,58 @@
+<mvc:View controllerName="imgPloadr.view.upload" xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form">
+
+	<Panel width="auto" expanded="true" class="sapUiResponsiveMargin"
+		design="Transparent">
+		<headerToolbar>
+			<Toolbar height="3rem">
+				<Title text="Upload an Image" />
+			</Toolbar>
+		</headerToolbar>
+		<content>
+			<f:Form id="UploadImage" editable="true" width="inherit">
+
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanL="4"
+						labelSpanM="3" emptySpanL="4" emptySpanM="3" columnsL="2"
+						columnsM="2" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="My Image">
+								<f:fields>
+									<u:FileUploader id="fileUploader" name="myFileUpload"
+										uploadUrl="upload/" tooltip="Select File..." uploadComplete="handleUploadComplete"
+										style="Emphasized" fileType="jpg,png,gif" placeholder="No files chosen" />
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Title	">
+								<f:fields>
+									<Input type="Title" placeholder="Enter Title for Image ..." />
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Description">
+								<f:fields>
+									<TextArea type="Description" rows="4" />
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="">
+								<f:fields>
+									<Button text="Upload File" press="handleUploadPress" width="10em"/>
+								</f:fields>	
+							</f:FormElement>
+
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+
+			</f:Form>
+		</content>
+	</Panel>
+
+	<!-- <Panel width="auto" expanded="true" class="sapUiResponsiveMargin" design="Translucent"> 
+		<headerToolbar> <Toolbar height="3rem"> <Title text="Newest Images" /> </Toolbar> 
+		</headerToolbar> <content> </content> </Panel> -->
+
+</mvc:View>

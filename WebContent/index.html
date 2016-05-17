@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+
+	<title>imgPloadr.io</title>
+
+	<script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" src="http://github.com/rmm5t/jquery-timeago" data-sap-ui-libs="sap.m" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-xx-bindingSyntax="complex" data-sap-ui-preload="async"
+					data-sap-ui-compatVersion="edge" data-sap-ui-resourceroots='{"imgPloadr": "./"}'>
+	</script>
+
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Application launch configuration -->
+	<script>
+		/*   			sap.ui.getCore().attachInit(function() {
+						new sap.m.App ({
+						pages: [
+						new sap.m.Page({
+						title: "imgPloadr.io",
+						enableScrolling : false,
+						content: [ new sap.ui.core.ComponentContainer({
+						height : "100%", name : "imgPloadr"
+						})],
+						})
+						]
+						}).placeAt("content");
+						});    */
+
+		// Try new way to Support Routing and Nvaigation
+
+		sap.ui.getCore().attachInit(function() {
+			new sap.m.Shell({
+				appWidthLimited: true,
+				app: new sap.ui.core.ComponentContainer({
+					name: "imgPloadr"
+				})
+			}).placeAt("content");
+		});
+
+
+
+
+		/*  	sap.ui.getCore().attachInit(function() {
+		new sap.m.App ({
+		pages: [
+		new sap.m.Page({
+		title: "imgPloadr.io",
+		enableScrolling : true,
+		content: [ new sap.ui.core.ComponentContainer({
+		name : "imgPloadr"
+		})],
+		footer:new sap.m.Bar({
+
+		contentMiddle: new sap.m.Text({
+		text: "This is Footer Text"
+		})
+
+		})
+		})
+		]
+		}).placeAt("content");
+		});  */
+	</script>
+
+
+</head>
+
+<!-- UI Content -->
+
+<body class="sapUiBody" id="content" role="application">
+</body>
+
+</html>
