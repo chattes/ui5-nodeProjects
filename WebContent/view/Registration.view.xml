@@ -1,0 +1,56 @@
+<mvc:View controllerName="imgPloadr.view.LoginScreen" xmlns:l="sap.ui.layout"
+          xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+          xmlns:f="sap.ui.layout.form">
+
+    <Panel width="auto" expanded="true" class="sapUiResponsiveMargin"
+           design="Transparent">
+        <headerToolbar>
+            <Toolbar height="3rem">
+                <Title text="Register" />
+            </Toolbar>
+        </headerToolbar>
+        <content>
+            <f:Form id="Register" editable="true" width="inherit">
+
+                <f:layout>
+                    <f:ResponsiveGridLayout labelSpanL="4"
+                                            labelSpanM="3" emptySpanL="4" emptySpanM="3" columnsL="2"
+                                            columnsM="2" />
+                </f:layout>
+                <f:formContainers>
+                    <f:FormContainer>
+                        <f:formElements>
+                            <f:FormElement label="Name">
+                                <f:fields>
+                                    <Input id="Name" type="Text"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Email">
+                                <f:fields>
+                                    <Input id="Email" type="Email"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Password">
+                                <f:fields>
+                                    <Input id="Password" type="Password"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="">
+                            <f:fields>
+                                <Button text="Register" type="Accept" press="handleRegister" />
+                                <Button text="Register with Google+" type="Reject" press="handleRegisterGoogle"/>
+                            </f:fields>
+                        </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                </f:formContainers>
+
+            </f:Form>
+        </content>
+    </Panel>
+
+    <!-- <Panel width="auto" expanded="true" class="sapUiResponsiveMargin" design="Translucent">
+        <headerToolbar> <Toolbar height="3rem"> <Title text="Newest Images" /> </Toolbar>
+        </headerToolbar> <content> </content> </Panel> -->
+
+</mvc:View>

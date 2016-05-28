@@ -87,7 +87,8 @@ module.exports = {
                                 description: req.body.description
                             });
                             newImg.save(function (err, image) {
-                                res.redirect('/images/' + image.uniqueId);
+                                //res.redirect('/images/' + image.uniqueId);
+                                res.json(200,{uniqueId:image.uniqueId})
                             });
 
                         });

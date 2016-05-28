@@ -3,10 +3,10 @@ sap.ui.define([
     'sap/m/MessageToast',
     'sap/ui/core/mvc/Controller',
     'sap/ui/model/json/JSONModel',
-    'sap/ui/model/type/DateTime',
-    'imgPloadr/utils/libs/jquery.timeago'
+    'sap/ui/model/type/DateTime'
 
-], function(jQuery, MessageToast, Controller, JSONModel, DateTime, timeAgo) {
+
+], function(jQuery, MessageToast, Controller, JSONModel, DateTime) {
 
     "use strict";
 
@@ -26,37 +26,22 @@ sap.ui.define([
 
         timeAgo: function(timestamp) {
 
+           /*
+           Working Section
 
-/*            var time = new timeAgo();
-            console.log(timeAgo);*/
+            */
+            jQuery.sap.require("my.moment.moment");//Works...Try another way
+            return moment(timestamp).startOf('minute').fromNow();
 
-            var dateFormatted = function(isoTime){
-                var dt = isoTime.split(/[: T-]/).map(parseFloat);
-                return new Date(dt[0], dt[1] - 1, dt[2], dt[3] || 0, dt[4] || 0, dt[5] || 0, 0);
+            /*Experimental Section
 
-            }(timestamp);
-            console.log(dateFormatted);
+             sap.ui.require("my/momentAPI/moment",function (momentload) {
+             return moment(timestamp).startOf('minute').fromNow();
+             });
 
-            var getTimeAgo = function(commentDate){
+             //sap.ui.require("my.moment.moment"); Doesn't Work
 
-                var today = new Date().getTime();
-                var diff = Math.abs(today - Date.parse(commentDate));
-                diff = Math.abs(Math.floor(diff))/1000;
-                var days = Math.floor(diff / (24 * 60 * 60));
-                return days;
-
-            }(dateFormatted);
-
-
-
-            return getTimeAgo + " days ago";
-
-            /*			sap.ui.require(["imgPloadr/utils/libs/jquery.timeago"],function(timeAgoUtil){
-            				return timeAgoUtil.timeago(timestamp);
-            			});*/
-
-
-
+            */
         }
     });
 

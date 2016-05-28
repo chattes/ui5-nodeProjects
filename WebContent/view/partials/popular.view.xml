@@ -13,7 +13,7 @@
 				items="{/sidebar/popular}"
 				showSeparators="Inner" >
 				<FeedListItem
-					icon="./public/upload/{fileName}"
+					icon="././public/upload/{fileName}"
 					iconDensityAware="false"
 					info = "{fileName}"					
 					text="{description}"

@@ -1,6 +1,6 @@
 <mvc:View controllerName="imgPloadr.view.MainContainer" height="90%"
 	displayBlock="true" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout">
-	<Page showHeader="true" enableScrolling="true" title="imgPloadr.io">
+	<Page showHeader="true" enableScrolling="true" title="imgPloadr.io" showNavButton="true">
 		<content>
 			<l:DynamicSideContent id="DynamicSideContent"
 				class="sapUiDSCExplored sapUiContentPadding" containerQuery="true"

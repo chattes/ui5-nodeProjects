@@ -16,8 +16,39 @@ sap.ui.define(['sap/m/MessageToast',
 
 		},
 
-		onPress: function (evt) {
-			MessageToast.show(evt.getSource().getId() + " Pressed");
+		onPostComment: function (evt) {
+
+			var reqComment = {
+				email:this.byId("idEmail").getValue(),
+                comment:this.byId("idComment").getValue(),
+                name:this.byId("idName").getValue()
+			};
+            console.log(reqComment);
+            var oModel = new JSONModel();
+            var imageId = sap.ui.getCore().getModel("imageDet").getProperty("/image/fileName");
+            var sServiceURL = "http://localhost:3300/images/"+ imageId + "/comment";
+
+            oModel.attachRequestCompleted(function(data){
+
+				//Refresh Model after state has changed
+				if(data.getParameters().success){
+					this.getView().getModel().setData(data.getSource().oData);
+					MessageToast.show("Comment Posted Succesfully");
+					//Refresh Global Sidebar with new values
+					sap.ui.getCore().getModel("image").setProperty("/sidebar",data.getSource().oData.sidebar,data.getSource().oData,true);
+					console.log(sidebar);
+
+				}else{
+					MessageToast.show("Errors Occured while posting comment");
+				}
+
+
+            },this);
+            oModel.loadData(sServiceURL,reqComment,false,"POST",false);
+
+
+
+
 		},
 
 		_onObjectMatched: function(oEvent){
@@ -45,11 +76,11 @@ sap.ui.define(['sap/m/MessageToast',
             oModel.loadData(sServiceURL,{},false,"POST",false);
             var refreshed = oModel.getData();
             this.getView().getModel().setProperty("/image/likes",refreshed.likes);
-            var testModel = sap.ui.getCore().getModel("imageDet");
+            var modelRefreshed = sap.ui.getCore().getModel("imageDet");
 
-            var myView = sap.ui.getCore().byId("stats");
+// Publish Event for model changed
 			var oEventBus = sap.ui.getCore().getEventBus();
-			oEventBus.publish('image','onLike',sap.ui.getCore().getModel("imageDet"));
+			oEventBus.publish('imgPloadr.view.image','onLike',modelRefreshed);
 
 		}
 	});

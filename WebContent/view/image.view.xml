@@ -49,22 +49,22 @@
 									<f:formElements>
 										<f:FormElement label="Name">
 											<f:fields>
-												<Input type="Name" placeholder="Your Name..." />
+												<Input id="idName" type="Name" placeholder="Your Name..." />
 											</f:fields>
 										</f:FormElement>
-										<f:FormElement label="Email">
+										<f:FormElement id="email" label="Email">
 											<f:fields>
-												<Input type="Email" placeholder="Your Email Id..." />
+												<Input id="idEmail" type="Email" placeholder="Your Email Id..." />
 											</f:fields>
 										</f:FormElement>
 										<f:FormElement label="Commment">
 											<f:fields>
-												<Input type="Comment" placeholder="Your Comments..." />
+												<Input id="idComment" type="Comment" placeholder="Your Comments..." />
 											</f:fields>
 										</f:FormElement>
 										<f:FormElement label="">
 											<f:fields>
-												<Button text="Post Comment" press="handleCommentPress" />
+												<Button text="Post Comment" press="onPostComment" />
 											</f:fields>
 										</f:FormElement>
 									</f:formElements>

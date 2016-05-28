@@ -7,9 +7,13 @@
 
 	<title>imgPloadr.io</title>
 
-	<script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" src="http://github.com/rmm5t/jquery-timeago" data-sap-ui-libs="sap.m" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-xx-bindingSyntax="complex" data-sap-ui-preload="async"
-					data-sap-ui-compatVersion="edge" data-sap-ui-resourceroots='{"imgPloadr": "./"}'>
+	<script id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m" data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-xx-bindingSyntax="complex" data-sap-ui-preload="async"
+			data-sap-ui-compatVersion="edge" data-sap-ui-resourceroots='{"imgPloadr": "./"}'>
 	</script>
+	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>-->
 
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
@@ -30,14 +34,16 @@
 						}).placeAt("content");
 						});    */
 
-		// Try new way to Support Routing and Nvaigation
+		jQuery.sap.registerModulePath("my.moment","https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0");
+		//jQuery.sap.registerResourcePath("my/momentAPI","https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0");
 
 		sap.ui.getCore().attachInit(function() {
 			new sap.m.Shell({
 				appWidthLimited: true,
 				app: new sap.ui.core.ComponentContainer({
 					name: "imgPloadr"
-				})
+				}),
+				showLogout: true
 			}).placeAt("content");
 		});
 

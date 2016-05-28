@@ -42,7 +42,10 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/mvc/Controller', 'sap/ui/model/
 		handleSideContentShow: function (oEvent) {
 			this._oDSC.setShowSideContent(true);
 			this.updateShowSideContentButtonVisibility(this._oDSC.getCurrentBreakpoint());
-		}
+		},
+		navButtonPress: function(oEvent){
+            window.back();
+        }
 	});
 
 	return DynamicSideContent;
