@@ -6,11 +6,10 @@ sap.ui.define(['sap/m/MessageToast',
     var sServiceURL = "http://localhost:3300/auth/register";
     var RegController = Controller.extend("imgPloadr.view.Registration", {
 
-        handleRegister: function (oEvent) {
+        handleLogin: function (oEvent) {
 
 
             var loginDetails = {
-                name:this.byId("Name").getValue(),
                 email:this.byId("Email").getValue(),
                 password:this.byId("Password").getValue()
             };

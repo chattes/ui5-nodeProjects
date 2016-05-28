@@ -44,11 +44,18 @@ sap.ui.define(['sap/ui/core/UIComponent',
                         controlId: "app",
                         controlAggregation: "pages",
                     },
-                    routes: [{
+                    routes: [
+                        {
                         pattern: "",
                         name: "upload",
                         target: "upload"
-                    }, {
+                        },
+                        {
+                            pattern: "/register",
+                            name: "register",
+                            target: "register"
+                        },
+                        {
                         pattern: "image/{image_id}",
                         name: "image",
                         target: "image"
@@ -60,6 +67,9 @@ sap.ui.define(['sap/ui/core/UIComponent',
                         },
                         image: {
                             viewName: "image"
+                        },
+                        register: {
+                            viewName: "Registration"
                         }
                     }
 

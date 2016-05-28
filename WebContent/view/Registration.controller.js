@@ -4,7 +4,7 @@ sap.ui.define(['sap/m/MessageToast',
     'jquery.sap.global'], function (MessageToast, Controller,JSONModel, jQuery) {
     "use strict";
     var sServiceURL = "http://localhost:3300/auth/register";
-    var RegController = Controller.extend("imgPloadr.view.LoginScreen", {
+    var RegController = Controller.extend("imgPloadr.view.Registration", {
 
         handleRegister: function (oEvent) {
 

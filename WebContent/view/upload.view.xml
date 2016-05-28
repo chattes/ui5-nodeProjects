@@ -40,7 +40,7 @@
 							<f:FormElement label="">
 								<f:fields>
 									<Button text="Upload File" press="handleUploadPress" width="10em"/>
-								</f:fields>	
+								</f:fields>
 							</f:FormElement>
 
 						</f:formElements>

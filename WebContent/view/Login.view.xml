@@ -10,7 +10,7 @@
             </Toolbar>
         </headerToolbar>
         <content>
-            <f:Form id="Register" editable="true" width="inherit">
+            <f:Form id="Login" editable="true" width="inherit">
 
                 <f:layout>
                     <f:ResponsiveGridLayout labelSpanL="4"
@@ -20,11 +20,6 @@
                 <f:formContainers>
                     <f:FormContainer>
                         <f:formElements>
-                            <f:FormElement label="Name">
-                                <f:fields>
-                                    <Input id="Name" type="Text"/>
-                                </f:fields>
-                            </f:FormElement>
                             <f:FormElement label="Email">
                                 <f:fields>
                                     <Input id="Email" type="Email"/>
@@ -37,8 +32,7 @@
                             </f:FormElement>
                             <f:FormElement label="">
                             <f:fields>
-                                <Button text="Register" type="Accept" press="handleRegister" />
-                                <Button text="Register with Google+" type="Reject" press="handleRegisterGoogle"/>
+                                <Button text="Login" type="Accept" press="handleLogin" />
                             </f:fields>
                         </f:FormElement>
                         </f:formElements>

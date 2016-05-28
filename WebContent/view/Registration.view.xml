@@ -1,4 +1,4 @@
-<mvc:View controllerName="imgPloadr.view.LoginScreen" xmlns:l="sap.ui.layout"
+<mvc:View controllerName="imgPloadr.view.Registration" xmlns:l="sap.ui.layout"
           xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
           xmlns:f="sap.ui.layout.form">
 

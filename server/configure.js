@@ -8,6 +8,9 @@ var path = require('path'),
     methodOverride = require('method-override'),
     errorHandler = require('errorHandler'),
     multer = require('multer'),
+    passport = require('passport'),
+    session = require('express-session'),
+    passportConfig = require('./passportConfig')(passport),
     moment = require('moment');
 
 module.exports = function (app) {
@@ -16,7 +19,12 @@ module.exports = function (app) {
     app.use(bodyParser.json());
     app.use(methodOverride());
     app.use(cookieParser('some-secret-value-here'));
-    routes(app); //moving the routes to routes folder
+
+    //Passport Setup
+    app.use(session({secret:"imgPloadrSessionSecret"}));
+    app.use(passport.initialize());
+    app.use(passport.session());
+    routes(app,passport); //moving the routes to routes folder--> passing te Passport session for authentication
 
     //app.use('/public/', express.static(path.join(__dirname, '../public')));
     //        app.use(multer({ dest: path.join(__dirname, 'public/upload/') }).single('pic'));
