@@ -2,33 +2,12 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/mvc/Controller', 'sap/ui/model/
 	function(jQuery, Controller, JSONModel, Device) {
 	"use strict";
 
-	var DynamicSideContent = Controller.extend("imgPloadr.view.MainContainer", {
-		onInit : function () {
-
-			//set Data Model
-			var sServiceUrl = "http://localhost:3300/";
-			var oModel = new JSONModel();
-
-
-			oModel.loadData(sServiceUrl);
-			sap.ui.getCore().setModel(oModel, "image");
-
-/*			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.getRoute("home").attachPatternMatched(this._onObjectMatched,this);*/
-
-		},
-		_onObjectMatched: function(oEvent){
-// Call Backend Service to Get details of the Image Clicked
-
-/*			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("upload");*/
-		},		
+	var DynamicSideContent = Controller.extend("imgPloadr.view.LoginScreenContainer", {
+		onInit : function () {},
 		onAfterRendering: function () {
 /*			var sCurrentBreakpoint = this._oDSC.getCurrentBreakpoint();
 			this.updateToggleButtonState(sCurrentBreakpoint);
-*/
-
-		},
+*/		},
 		handleSliderChange: function (oEvent) {
 			var iValue = oEvent.getParameter("value");
 			this.updateControlWidth(iValue);

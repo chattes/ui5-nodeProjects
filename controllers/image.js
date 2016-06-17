@@ -32,7 +32,7 @@ module.exports = {
                     res.render('image', viewModel);
                 } else {
                     // Normal Execution
-                    res.json(viewModel);
+                    res.status('200').json(viewModel);
                 }                         
                         
                     });

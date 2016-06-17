@@ -1,0 +1,10 @@
+# Files to be ignored
+jsconfig.json
+.vscode/
+.idea/
+node_modules/
+public/upload
+server/public
+WebContent/.metadata
+WebContent/META-INF
+

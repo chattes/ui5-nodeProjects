@@ -51,5 +51,27 @@ module.exports = function(passport){
         });
     }));
 
+    //Login Configuration
+    passport.use('local-login',new localStrategy({
+        usernameField:'email',
+        passswordField:'password',
+        passReqToCallback : true
+
+    },function (req,email,password,done) {
+        User.findOne({email:email},function (err,user) {
+            if(err) return done(err);
+            if(!user){
+                return done(null,false,{message:'User does not exist'});
+
+            }
+            if(!user.validPassword(password)){
+                return done(null,false,{message:'Incorrect Password'})
+            }
+
+            return done(null,user);
+        });
+        
+    }));
+
 
 };

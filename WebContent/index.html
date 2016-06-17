@@ -38,14 +38,19 @@
 		//jQuery.sap.registerResourcePath("my/momentAPI","https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0");
 
 		sap.ui.getCore().attachInit(function() {
-			new sap.m.Shell({
+			var oShell = new sap.m.Shell({
 				appWidthLimited: true,
 				app: new sap.ui.core.ComponentContainer({
-					name: "imgPloadr"
+					name: "imgPloadr",
+                    height:"100%"
 				}),
 				showLogout: true
-			}).placeAt("content");
+			});
+
+			oShell.placeAt("content");
 		});
+
+
 
 
 

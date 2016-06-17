@@ -1,10 +1,36 @@
 sap.ui.define(['sap/m/MessageToast',
             'sap/ui/core/mvc/Controller',
-            'jquery.sap.global'],function(MessageToast, Controller, jQuery){
+            'jquery.sap.global','sap/ui/model/json/JSONModel'],function(MessageToast, Controller, jQuery, JSONModel){
     "use strict";
     var delay=1000;
     var that;
     var uploadController = Controller.extend("imgPloadr.view.upload",{
+        onInit: function(){
+            //set Data Model
+            var sServiceUrl = "http://localhost:3300/";
+            var oModel = new JSONModel();
+
+
+            /*			$.ajax({
+             url:sServiceUrl,
+             contentType: "application/json",
+             dataType:'jsonP'
+             }).done(function(data){
+             this.setModel(data);
+             console.log(data);
+
+             }).fail(function(jqXHR, textStatus,errorThrown){
+
+             console.log(arguments);
+             }).always(function(jqXHR, textStatus,errorThrown){
+             console.log("Done");
+             });
+             */
+
+            oModel.loadData(sServiceUrl);
+            sap.ui.getCore().setModel(oModel, "image");
+                        
+        },
         handleUploadComplete: function(oEvent) {
 
             //Convert RAW response to JSON Object

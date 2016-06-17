@@ -1,23 +1,13 @@
-<mvc:View controllerName="imgPloadr.view.MainContainer" height="90%"
-	displayBlock="true" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout">
-	<Page showHeader="true" enableScrolling="true" title="imgPloadr.io" showNavButton="true">
-		<content>
-			<l:DynamicSideContent id="DynamicSideContent"
-				class="sapUiDSCExplored sapUiContentPadding" containerQuery="true"
-				sideContentFallDown="BelowM" breakpointChanged="handleBreakpointChangeEvent">
-				<l:mainContent>
-							<App class="imgPloadrDyn" id="app" />
-				</l:mainContent>
-				<l:sideContent>
-<!-- 					<l:VerticalLayout>
-						<l:content> -->
-							<mvc:XMLView viewName="imgPloadr.view.partials.stats"></mvc:XMLView>
-							<mvc:XMLView viewName="imgPloadr.view.partials.popular"></mvc:XMLView>
-							<mvc:XMLView viewName="imgPloadr.view.partials.comments"></mvc:XMLView>							
-<!-- 						</l:content>
-					</l:VerticalLayout> -->
-				</l:sideContent>
-			</l:DynamicSideContent>
-		</content>
-	</Page>
+<mvc:View controllerName="imgPloadr.view.MainContainer"
+	displayBlock="false" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout">
+
+    <SplitApp id="splitHomePage">
+        <masterPages>
+            <!--Filled Dynamically By Routing-->
+        </masterPages>
+        <detailPages>
+            <!--Filled Dynamically by Routing-->
+        </detailPages>
+    </SplitApp>
+
 </mvc:View>

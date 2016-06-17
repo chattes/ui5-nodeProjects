@@ -1,4 +1,4 @@
-<mvc:View controllerName="imgPloadr.view.Registration" xmlns:l="sap.ui.layout"
+<mvc:View controllerName="imgPloadr.view.Login" xmlns:l="sap.ui.layout"
           xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
           xmlns:f="sap.ui.layout.form">
 
@@ -6,7 +6,7 @@
            design="Transparent">
         <headerToolbar>
             <Toolbar height="3rem">
-                <Title text="Register" />
+                <Title text="Login" />
             </Toolbar>
         </headerToolbar>
         <content>
@@ -22,7 +22,7 @@
                         <f:formElements>
                             <f:FormElement label="Email">
                                 <f:fields>
-                                    <Input id="Email" type="Email"/>
+                                    <Input id="Email" type="Text"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Password">
@@ -31,10 +31,14 @@
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="">
-                            <f:fields>
-                                <Button text="Login" type="Accept" press="handleLogin" />
-                            </f:fields>
-                        </f:FormElement>
+                                <f:fields>
+                                    <Button text="Login" type="Accept" press="handleLogin" />
+                                </f:fields>
+                                <f:fields>
+                                    <Button text="New User" type="Emphasized" press="handleNewUser" />
+                                </f:fields>
+
+                            </f:FormElement>
                         </f:formElements>
                     </f:FormContainer>
                 </f:formContainers>
@@ -43,8 +47,5 @@
         </content>
     </Panel>
 
-    <!-- <Panel width="auto" expanded="true" class="sapUiResponsiveMargin" design="Translucent">
-        <headerToolbar> <Toolbar height="3rem"> <Title text="Newest Images" /> </Toolbar>
-        </headerToolbar> <content> </content> </Panel> -->
 
 </mvc:View>
