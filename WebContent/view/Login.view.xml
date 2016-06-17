@@ -1,0 +1,51 @@
+<mvc:View controllerName="imgPloadr.view.Login" xmlns:l="sap.ui.layout"
+          xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+          xmlns:f="sap.ui.layout.form">
+
+    <Panel width="auto" expanded="true" class="sapUiResponsiveMargin"
+           design="Transparent">
+        <headerToolbar>
+            <Toolbar height="3rem">
+                <Title text="Login" />
+            </Toolbar>
+        </headerToolbar>
+        <content>
+            <f:Form id="Login" editable="true" width="inherit">
+
+                <f:layout>
+                    <f:ResponsiveGridLayout labelSpanL="4"
+                                            labelSpanM="3" emptySpanL="4" emptySpanM="3" columnsL="2"
+                                            columnsM="2" />
+                </f:layout>
+                <f:formContainers>
+                    <f:FormContainer>
+                        <f:formElements>
+                            <f:FormElement label="Email">
+                                <f:fields>
+                                    <Input id="Email" type="Text"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Password">
+                                <f:fields>
+                                    <Input id="Password" type="Password"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="">
+                                <f:fields>
+                                    <Button text="Login" type="Accept" press="handleLogin" />
+                                </f:fields>
+                                <f:fields>
+                                    <Button text="New User" type="Emphasized" press="handleNewUser" />
+                                </f:fields>
+
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                </f:formContainers>
+
+            </f:Form>
+        </content>
+    </Panel>
+
+
+</mvc:View>

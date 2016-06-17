@@ -1,0 +1,59 @@
+<mvc:View sId="statsView" controllerName="imgPloadr.view.partials.stats"
+	xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+
+		<l:VerticalLayout
+		class="sapUiContentPadding"
+		width="100%">
+	
+		<l:content>			
+			<f:Form id="Stats" editable="false" title="Stats">
+
+				<f:layout>
+					<f:GridLayout singleColumn="true" />
+				</f:layout>
+				<f:formContainers>
+				
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Images">
+								<f:layoutData>
+									<f:GridElementData hCells="3" />
+								</f:layoutData>
+								<f:fields>
+									<Text text="{image>/sidebar/stats/images}" TextAlign="Right"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Views">
+								<f:layoutData>
+									<f:GridElementData hCells="3" />
+								</f:layoutData>
+								<f:fields>
+									<Text text="{image>/sidebar/stats/views}" TextAlign="Right"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Comments">
+								<f:layoutData>
+									<f:GridElementData hCells="3" />
+								</f:layoutData>
+								<f:fields>
+									<Text text="{image>/sidebar/stats/comments}" TextAlign="Right"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Likes">
+								<f:layoutData>
+									<f:GridElementData hCells="3" />
+								</f:layoutData>
+								<f:fields>
+									<Text text="{imageDet>/image/likes}" TextAlign="Right"/>
+								</f:fields>
+							</f:FormElement>							
+							
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>			
+		</l:content>
+</l:VerticalLayout>
+
+</mvc:View>

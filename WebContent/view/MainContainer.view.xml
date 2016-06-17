@@ -1,0 +1,13 @@
+<mvc:View controllerName="imgPloadr.view.MainContainer"
+	displayBlock="false" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout">
+
+    <SplitApp id="splitHomePage">
+        <masterPages>
+            <!--Filled Dynamically By Routing-->
+        </masterPages>
+        <detailPages>
+            <!--Filled Dynamically by Routing-->
+        </detailPages>
+    </SplitApp>
+
+</mvc:View>

@@ -1,0 +1,10 @@
+<mvc:View controllerName="imgPloadr.view.LoginScreenContainer" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" height="93%">
+	<Page title="imgPloadr.io">
+		<content>
+			<App id="app" backgroundColor="#FFFFFF">
+				<!--Will be filled Dynamically from Routes-->
+			</App>
+		</content>
+	</Page>
+
+</mvc:View>
